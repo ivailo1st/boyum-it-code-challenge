@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AppService } from '../app.service';
 
 @Component({
@@ -21,6 +21,9 @@ import { AppService } from '../app.service';
         <div [ngClass]="item.Done ? 'finishedItem' : 'notFinishedItem'">
           {{  item.Done ? 'Done' : 'Not Done' }}
         </div>
+        <div>
+          Created: {{ daysAgo && daysAgo >= 0 ? daysAgo : 0 }} days ago
+        </div>
       </div>
       <button class="backButton" (click)="openItems()"> Go Back </button>
   `,
@@ -29,15 +32,18 @@ import { AppService } from '../app.service';
 export class ToDoItemComponent implements OnInit {
 
   item: any = null;
+  daysAgo = 0;
+  currentDate = new Date();
   itemId: any;
 
   constructor(
     private activedRouter: ActivatedRoute,
     private router: Router,
     private appService: AppService,
+
   ) { }
 
-  openItems(){
+  openItems() {
     this.router.navigateByUrl("/items");
   }
 
@@ -45,8 +51,9 @@ export class ToDoItemComponent implements OnInit {
     this.itemId = this.activedRouter.snapshot.paramMap.get("itemId");
     this.appService.getItem(parseInt(this.itemId, 10)).subscribe(item => {
       this.item = item[0];
+      this.item.Expenses = this.item.Expenses.toLocaleString();
       this.item.Created = new Date(this.item.Created).toLocaleDateString();
-      console.log(this.item);
+      this.daysAgo = Math.ceil(Math.abs(this.currentDate.getTime() - new Date(this.item.Created).getTime()) / (1000 * 3600 * 24));
     });
   }
 
