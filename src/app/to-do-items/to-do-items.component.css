@@ -1,5 +1,7 @@
 .listView {
     width: 100%;
+    cursor: default;
+    padding: 0 2rem;
 }
 
 .listView table {
@@ -8,7 +10,8 @@
 
 .listView table thead th {
     text-align: left;
-    padding: 1rem;
+    align-items: center;
+    padding: 0.5rem;
 }
 
 .listView table tbody td {
@@ -19,10 +22,17 @@
 .itemName {
     cursor: pointer;
     padding: 0.5rem;
-    border: 2px solid rgb(194, 194, 194);
+    background-color: rgb(128, 0, 128);
     border-radius: 0.5rem;
-    color: purple;
+    color: rgb(255, 255, 255);
     width: fit-content;
+}
+
+.itemName:hover {
+    cursor: pointer;
+    border: 1px solid rgb(128, 0, 128);
+    background-color: rgb(255, 255, 255);
+    color: rgb(128, 0, 128);
 }
 
 .dateInvalid {

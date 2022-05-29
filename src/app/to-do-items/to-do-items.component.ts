@@ -11,14 +11,16 @@ import { AppService } from '../app.service';
         <table>
           <thead>
             <tr>
-              <th></th>
-              <th>
+              <th style="width:2%">
+                Status
+              </th>
+              <th style="width:2%">
                 ID
               </th>
-              <th colspan="3">
+              <th>
                 Name
               </th>
-              <th>
+              <th style="width:15%">
                 Created date
               </th>
             </tr>
@@ -31,7 +33,7 @@ import { AppService } from '../app.service';
                 <td>
                   {{ item.Id }}
                 </td>
-                <td colspan="3">
+                <td>
                   <div class="itemName" (click)="openDetails(item.Id)">
                     {{ item.Name }}
                   </div>
