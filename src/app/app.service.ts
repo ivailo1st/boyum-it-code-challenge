@@ -1,26 +1,16 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable, OnInit } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { map, take } from "rxjs/operators";
 
 @Injectable({
     providedIn: 'root',
 })
 
-export class AppService implements OnInit {
-
-    data: any[] = [];
+export class AppService {
 
     constructor(
         private httpClient: HttpClient,
     ) { }
-
-    ngOnInit(): void {
-        this.httpClient.get("https://boyumcodechallenge.azurewebsites.net/api/todolist")
-            .pipe(take(1))
-            .subscribe((data: any) => {
-                this.data = data;
-            });
-    }
 
     getItems() {
         return this.httpClient.get("https://boyumcodechallenge.azurewebsites.net/api/todolist")

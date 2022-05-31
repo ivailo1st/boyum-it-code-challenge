@@ -51,9 +51,6 @@ import { AppService } from '../app.service';
   styleUrls: ['./to-do-items.component.css']
 })
 export class ToDoItemsComponent implements OnInit, OnDestroy {
-
-  title = 'To do list app';
-
   items: any[] = [];
 
   unsubscribe = new Subject;
