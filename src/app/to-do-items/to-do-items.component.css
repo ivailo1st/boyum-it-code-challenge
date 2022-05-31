@@ -1,20 +1,32 @@
-.listView {
+.container {
     width: 100%;
     cursor: default;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
+    width: 50rem;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
 
-.listView table {
+.container table {
     width: 100%;
 }
 
-.listView table thead th {
+.container table thead th {
     text-align: left;
     align-items: center;
     padding: 0.5rem;
 }
 
-.listView table tbody td {
+.statusHeader, .idHeader {
+    width: 2%;
+}
+
+.dateHeader {
+    width: 16%;
+}
+
+.container table tbody td {
     padding: 1rem;
     text-align: left;
 }

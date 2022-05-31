@@ -7,20 +7,20 @@ import { AppService } from '../app.service';
 @Component({
   selector: 'app-to-do-items',
   template: `
-    <div class="listView">
+    <div class="container">
         <table>
           <thead>
             <tr>
-              <th style="width:2%">
+              <th class="statusHeader">
                 Status
               </th>
-              <th style="width:2%">
+              <th class="idHeader">
                 ID
               </th>
               <th>
                 Name
               </th>
-              <th style="width:15%">
+              <th class="dateHeader">
                 Created date
               </th>
             </tr>

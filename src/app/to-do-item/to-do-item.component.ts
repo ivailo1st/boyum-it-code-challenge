@@ -6,20 +6,18 @@ import { AppService } from '../app.service';
   selector: 'app-to-do-item',
   template: `
       <div class="container">
-        <div *ngIf="item" class="todoItem">
+        <div class="todoItemHeader">
+          <div class="todoItemName">
+            {{  item.Name || 'No name provided' }}
+          </div>
+          <div class="todoItemDescription">
+            {{  item.Description || 'No description provided'  }}
+          </div>
+        </div>
+        <div class="todoItemBody">
           <div class="todoItemSection">
             <div class="todoItemSectionName">ID:</div>            
             {{  item.Id }}
-          </div>
-          <div class="todoItemSection">
-            <div class="todoItemSectionName">Name:</div>            
-            {{  item.Name || 'No name provided' }}
-          </div>
-          <div class="todoItemSection">
-            <div class="todoItemSectionName">Description:</div>
-            <div class="description">              
-              {{  item.Description || 'No description provided'  }}
-            </div>
           </div>
           <div class="todoItemSection">
             <div class="todoItemSectionName">Expenses:</div>            
