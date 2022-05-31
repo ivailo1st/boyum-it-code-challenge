@@ -60,7 +60,7 @@ export class ToDoItemComponent implements OnInit {
   ) { }
 
   openItems() {
-    this.router.navigateByUrl("/items");
+    this.router.navigateByUrl("");
   }
 
   ngOnInit(): void {
